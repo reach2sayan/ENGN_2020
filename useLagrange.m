@@ -1,11 +1,10 @@
 % lagrange example
-clear;close all;
-x=[-2;-1;0;1;2];
-y=[0;0;1;0;0];
+x=[-4;-3;-2;-1;0;1;2;3;4];
+y=[0;0;0;sqrt(3);2;sqrt(3);0;0;0];
 %plot(x,y)
 [P,R,S] = lagrangepoly(x,y);
 % 
-xx = linspace(-2,2,4000);
+xx = linspace(-4,4,7000);
 yy = polyval(P,xx);
 %figure(1)
 % MATLAB cubic spline function

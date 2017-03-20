@@ -1,8 +1,8 @@
-function I = simpsons(f,N,a,b)
+function I = simpsons(f,h,a,b)
 %SIMPSONS Summary of this function goes here
 %   Detailed explanation goes here
-x = linspace(a,b,N+1);
-h = (b-a)/N;
+x = [a:h:b];
+% N = (b-a)/h;
 I = (h/3)*f(a);
 l = length(x);
 

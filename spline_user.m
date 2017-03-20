@@ -1,4 +1,4 @@
-function [splineCoeff x y] = spline_user(f,N,k0,kN,a,b,X,h)
+function [splineCoeff x y] = spline_user(f,N,k0,kN,X,h)
 %SPLINECOEFF Summary of this function goes here
 %   Detailed explanation goes here
 A = zeros(N);
