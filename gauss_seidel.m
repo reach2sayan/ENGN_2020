@@ -35,7 +35,7 @@ C = -inv(I+L)*U;
          end
          X(i) = (1/A(i,i))*(b(i) - sigma);
      end
-     
+     X
      for i = 1:n
          if abs(X(i) - Xold(i)) < 0.000001
              converged = 1;
@@ -45,9 +45,6 @@ C = -inv(I+L)*U;
      end
      
  end
-     rho = abs(max(eig(C)))
-     X
-     iter
-     result = [rho iter];
+    
 end
 
