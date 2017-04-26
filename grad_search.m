@@ -1,8 +1,8 @@
-function [x y xrecord H] = grad_search(f,x0)
+function [x y xrecord H t] = grad_search(f,x0)
 %GRAD_SEARCH Summary of this function goes here
 %   Detailed explanation goes here
 x = x0;
-maxiter = 1000;
+maxiter = 5;
 converged = 0;
 syms t x1 x2;
 grad_f = gradient(f, [x1 x2]);
@@ -13,6 +13,7 @@ diffg = diff(g,t);
 eqng = diffg(t) == 0;
 solt = solve(eqng,t);
 soltfun(x1,x2) = solt;
+t = double(soltfun(x(1),x(2)));
 y = double(f(x(1),x(2)));
 xrecord = x';
 while converged == 0 
@@ -21,6 +22,7 @@ while converged == 0
     xrecord = [xrecord;x'];
     fnew = double(f(x(1),x(2)));
     y = [y;fnew];
+    t = [t;double(soltfun(x(1),x(2)))];
     if abs(fnew - fold) < 0.00001
         converged = 1;
     else
