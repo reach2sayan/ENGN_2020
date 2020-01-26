@@ -1,0 +1,12 @@
+function [d] = determinant(A)
+%DETER Summary of this function goes here
+%   Detailed explanation goes here
+    [nrow,ncol] = size(A);
+    
+    if nrow == ncol
+        if size(A) == [1 1]
+            d = 
+    
+
+end
+
