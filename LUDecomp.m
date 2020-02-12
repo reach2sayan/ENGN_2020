@@ -1,8 +1,8 @@
-function [L U X] = LUDecomp( A,b )
+function [L,U] = LUDecomp(A)
 %TRIAL_LU Summary of this function goes here
 %   Detailed explanation goes here
 
-    [m n] = size(A);
+    [m, n] = size(A);
     
     if m ~= n
         disp('Matrix not square.');
@@ -20,8 +20,5 @@ function [L U X] = LUDecomp( A,b )
             end
         end
     end
-    
-    y = inv(L)*b;
-    X = inv(U)*y;
 end
 

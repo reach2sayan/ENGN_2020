@@ -22,7 +22,8 @@ for i = 1:3
     end
 end
 C = -inv(I+L)*U;
-
+disp(L)
+disp(U)
  while converged == 0
      iter = iter+1;
      Xold = X;
