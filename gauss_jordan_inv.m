@@ -7,8 +7,8 @@ function [ A ] = gauss_jordan_inv( A )
         return;
     end
 
-    inv = eye(n); %declaring the identity matrix to be converted into inverse
-    A = [A inv];
+    inv = A; %declaring the identity matrix to be converted into inverse
+    A = [(A)*(A') inv];
 
     %partial pivoting
     for k = 1:n-1
@@ -41,16 +41,6 @@ function [ A ] = gauss_jordan_inv( A )
             mult = A(i,k)/A(k,k);
             for j = k:2*n
                 A(i,j) = A(i,j) - mult*A(k,j);
-            end
-        end
-    end
-    
-    % backward elimination 
-    for k=n:-1:1
-        for i=k-1:-1:1
-            mult = A(i,k)/A(k,k);
-            for j=2*n:-1:k
-                A(i,j) = A(i,j)-mult*A(k,j);
             end
         end
     end
