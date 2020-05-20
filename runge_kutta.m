@@ -2,7 +2,7 @@ function y = runge_kutta(vdp1,x,h,y0)
 %RUNGE_KUTTA Summary of this function goes here
 %   Detailed explanation goes here
 n = length(x);
-y = zeros(n,2);
+y = zeros(n,1);
 
 y(1,:) = y0;
 
